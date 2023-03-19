@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://gkp0pi1gh3gr"]
+
+[ext_resource type="PackedScene" uid="uid://2sft2fjtao37" path="res://player.tscn" id="1_wxfcl"]
+[ext_resource type="PackedScene" uid="uid://dkb8rjcdwd0vp" path="res://enemy1.tscn" id="2_hgokq"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_03t4s"]
+b = Vector2(-1, 19.1847)
+
+[node name="glcene" type="Node2D"]
+position = Vector2(533, 387)
+
+[node name="player" parent="." instance=ExtResource("1_wxfcl")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-69, -66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-466, -340)
+scale = Vector2(1, 38.44)
+shape = SubResource("SegmentShape2D_03t4s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1084, -101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-466, -340)
+scale = Vector2(1, 38.44)
+shape = SubResource("SegmentShape2D_03t4s")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1084, -101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-446, -285)
+rotation = 1.5708
+scale = Vector2(1, 62.92)
+shape = SubResource("SegmentShape2D_03t4s")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(1087, 548)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-446, -285)
+rotation = 1.5708
+scale = Vector2(1, 62.92)
+shape = SubResource("SegmentShape2D_03t4s")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_hgokq")]
+position = Vector2(6, -115)

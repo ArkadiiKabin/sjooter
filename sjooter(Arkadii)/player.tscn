@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://2sft2fjtao37"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_7hu4i"]
+[ext_resource type="Texture2D" uid="uid://catkfx327v0dx" path="res://sset/Spaceship-shooter-gamekit/Spaceship-shooter-gamekit/spritesheets/ship.png" id="1_gcutw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oripy"]
+atlas = ExtResource("1_gcutw")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xonl3"]
+atlas = ExtResource("1_gcutw")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsps7"]
+atlas = ExtResource("1_gcutw")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrli7"]
+atlas = ExtResource("1_gcutw")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u846"]
+atlas = ExtResource("1_gcutw")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5agq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oripy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xonl3")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsps7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrli7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u846")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su1gx"]
+size = Vector2(12, 23)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_7hu4i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5agq7")
+animation = &"fly"
+frame_progress = 0.73517
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_su1gx")

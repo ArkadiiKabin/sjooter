@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bshiq73rtjjkk"
+path="res://.godot/imported/spaceship shooter .mp3-fb7f9d3684c87ef4984e1b8b0a6fc050.mp3str"
+
+[deps]
+
+source_file="res://sset/spaceship shooter music/spaceship shooter music/spaceship shooter .mp3"
+dest_files=["res://.godot/imported/spaceship shooter .mp3-fb7f9d3684c87ef4984e1b8b0a6fc050.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

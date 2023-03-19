@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://he11fkwmk8f4"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_fewjj"]
+[ext_resource type="Texture2D" uid="uid://bmimvcr4s7kqn" path="res://sset/Spaceship-shooter-gamekit/Spaceship-shooter-gamekit/spritesheets/explosion.png" id="1_lndj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnvb0"]
+atlas = ExtResource("1_lndj5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yp7n"]
+atlas = ExtResource("1_lndj5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs225"]
+atlas = ExtResource("1_lndj5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j3pl"]
+atlas = ExtResource("1_lndj5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db80r"]
+atlas = ExtResource("1_lndj5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o32mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnvb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yp7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bs225")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j3pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db80r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v3j63"]
+radius = 7.07107
+
+[node name="bullet" type="CharacterBody2D"]
+script = ExtResource("1_fewjj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o32mt")
+frame_progress = 0.370644
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v3j63")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkb8rjcdwd0vp"]
+
+[ext_resource type="Texture2D" uid="uid://dm4k6jhj3yvsh" path="res://sset/Spaceship-shooter-gamekit/Spaceship-shooter-gamekit/spritesheets/enemy-big.png" id="1_f0py5"]
+[ext_resource type="Script" path="res://enemy1.gd" id="1_gpoy1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_picjv"]
+atlas = ExtResource("1_f0py5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0jrv"]
+atlas = ExtResource("1_f0py5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnys4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_picjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0jrv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4yx0"]
+size = Vector2(25, 26)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_gpoy1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cnys4")
+animation = &"run"
+frame_progress = 0.321277
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_o4yx0")
